@@ -1,5 +1,6 @@
 // Media model for CRUD
 let Media = require('../Models/media');
+require('../Models/provider');
 
 let index = async (req, res, next) => {
     // fetch all media docs 
@@ -13,7 +14,7 @@ let index = async (req, res, next) => {
 };
 
 let displayCreateForm = (req, res, next) => {
-    res.render('media/create', { title: 'Add New Media' });
+    res.render('media/create', { title: 'Add New Media', provider: `${provider.name}` });
 };
 
 let createMedia = async (req, res, next) => {
@@ -37,7 +38,8 @@ let displayEditForm = async (req, res, next) => {
     let media = await Media.findById(req.params._id);
 
     res.render('media/edit', { 
-        title: 'Update Media',
+        title: 'Update Media', 
+        provider: `${provider.name}`,
         media: media
     });
 };
