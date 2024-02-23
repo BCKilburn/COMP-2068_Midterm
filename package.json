@@ -2,7 +2,7 @@
   "name": "your-mvc-js-hbs",
   "version": "0.0.1",
   "main": "server.js",
-  "author": "Your Name Goes Here",
+  "author": "Braden Kilburn",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
